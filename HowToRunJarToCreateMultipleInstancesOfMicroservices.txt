@@ -1,0 +1,13 @@
+First, run your microservice from IntelliJ, this will create one instance.
+
+Then, to create another instance, use the below instructions.
+
+To run a JAR file that may be not compatible with your Jdk
+
+Set temporary JDK path with the compatible Jdk in cmd
+
+set PATH="C:\Program Files\Java\jdk-17\bin"
+
+after that use below command to run JAR file, specify port number
+
+java -Dserver.port=8082 -jar department-service-0.0.1-SNAPSHOT.jar
