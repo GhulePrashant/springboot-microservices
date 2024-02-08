@@ -1,5 +1,10 @@
 package com.prashantghule.employeeservice;
 
+import io.swagger.v3.oas.annotations.ExternalDocumentation;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Contact;
+import io.swagger.v3.oas.annotations.info.Info;
+import io.swagger.v3.oas.annotations.info.License;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
@@ -7,6 +12,24 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
 
+@OpenAPIDefinition(
+		info = @Info(
+				title = "Employee Service REST APIs",
+				description = "Employee Service REST APIs - Create, Get",
+				contact = @Contact(
+						name = "Prashant Ghule",
+						email = "ghuleprashant3097@gmail.com",
+						url = "https://github.com/GhulePrashant"
+				),
+				license = @License(
+						name = "Apache 2.0",
+						url = "https://github.com/GhulePrashant"
+				)
+		),
+		externalDocs = @ExternalDocumentation(
+				description = "Employee Service Doc"
+		)
+)
 @SpringBootApplication
 @EnableFeignClients
 public class EmployeeServiceApplication {
@@ -17,10 +40,10 @@ public class EmployeeServiceApplication {
 	}
 */
 
-//	@Bean
-//	public WebClient webClient(){
-//		return WebClient.builder().build();
-//	}
+	@Bean
+	public WebClient webClient(){
+		return WebClient.builder().build();
+	}
 
 
 	public static void main(String[] args) {
